@@ -109,13 +109,13 @@ docker-compose down
 ### 6. Run Migrations
 
 ```bash
-npx sequelize-cli db:migrate
+docker-compose exec backend npx sequelize-cli db:migrate
 ```
 
 To undo:
 
 ```bash
-npx sequelize-cli db:migrate:undo
+docker-compose exec backend npx sequelize-cli db:migrate:undo
 ```
 
 ### 7. Run Seeders
@@ -123,19 +123,19 @@ npx sequelize-cli db:migrate:undo
 To run all seeders:
 
 ```bash
-npx sequelize-cli db:seed:all
+docker-compose exec backend npx sequelize-cli db:seed:all
 ```
 
 To run a specific seeder:
 
 ```bash
-npx sequelize-cli db:seed --seed path/to/your-seeder-file.js
+docker-compose exec backend npx sequelize-cli db:seed --seed path/to/your-seeder-file.js
 ```
 
 To undo seeders:
 
 ```bash
-npx sequelize-cli db:seed:undo:all
+docker-compose exec backend npx sequelize-cli db:seed:undo:all
 ```
 
 The app will be available at `http://localhost:3000`.
