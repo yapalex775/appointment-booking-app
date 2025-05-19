@@ -69,7 +69,16 @@ JWT_SECRET=your_secret
 REFRESH_TOKEN_SECRET=your_refresh_secret
 ```
 
-### 4. Start the Docker Containers
+## 🎨 Frontend Setup (`/frontend`)
+
+### 4. Install Client Dependencies
+
+```bash
+cd ../frontend
+npm install
+```
+
+### 5. Start the Docker Containers
 
 Make sure Docker is installed and running on your machine.
 
@@ -97,7 +106,7 @@ To stop the containers:
 docker-compose down
 ```
 
-### 5. Run Migrations
+### 6. Run Migrations
 
 ```bash
 npx sequelize-cli db:migrate
@@ -109,7 +118,7 @@ To undo:
 npx sequelize-cli db:migrate:undo
 ```
 
-### 6. Run Seeders
+### 7. Run Seeders
 
 To run all seeders:
 
@@ -129,6 +138,8 @@ To undo seeders:
 npx sequelize-cli db:seed:undo:all
 ```
 
+The app will be available at `http://localhost:3000`.
+
 ---
 
 ## 🔐 Authentication
@@ -147,25 +158,6 @@ npx sequelize-cli db:seed:undo:all
 | POST   | `/api/auth/login`    | Log in + issue tokens   |
 | GET    | `/api/appointments`  | List user appointments  |
 | POST   | `/api/appointments`  | Create new appointment  |
-
----
-
-## 🎨 Frontend Setup (`/frontend`)
-
-### 6. Install Client Dependencies
-
-```bash
-cd ../frontend
-npm install
-```
-
-### 7. Start Development Server
-
-```bash
-npm start
-```
-
-The app will be available at `http://localhost:3000`.
 
 ---
 
